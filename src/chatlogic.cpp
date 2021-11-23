@@ -16,7 +16,7 @@ ChatLogic::ChatLogic()
 {
     //// STUDENT CODE
     ////
-    std::cout << "ChatLogic constructor\n";
+    std::cout << "ChatLogic default constructor\n";
 
     // create instance of chatbot
     //_chatBot = new ChatBot("../images/chatbot.png");
@@ -33,7 +33,7 @@ ChatLogic::~ChatLogic()
     //// STUDENT CODE
     ////
 
-    std::cout << "ChatLogic destructor\n";
+    std::cout << "ChatLogic default destructor\n";
     // delete chatbot instance
     // delete _chatBot;
 
@@ -215,11 +215,9 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     }
 
     // add chatbot to graph root node
-    ChatBot chatbot("../images/chatbot.png");
-    _chatBot = &chatbot;
+    ChatBot chatbot = ChatBot("../images/chatbot.png");
     chatbot.SetChatLogicHandle(this);
     chatbot.SetRootNode(rootNode);
-    std::cout  << "here\n";
     rootNode->MoveChatbotHere(std::move(chatbot));
     
     ////
